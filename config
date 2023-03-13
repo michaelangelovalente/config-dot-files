@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
+font pango:MesloLGS NF 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -114,12 +115,13 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
+#set $ws1 "1"
+set $ws1 "1:  terminal"
+set $ws2 "2:  development"
+set $ws3 "3:   chromium"
+set $ws4 "4: "
+set $ws5 "5:  notes"
+set $ws6 "6:  music"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -200,3 +202,11 @@ gaps outer 5
 
 ###### Keybinding for i3 lock ####
 bindsym $mod+x exec i3lock
+
+
+# Assign programs to workspaces
+for_window [class="Chromium"] move to workspace $ws3
+for_window [class="Spotify"] move to workspace $ws6
+ ## not working???
+for_window [class="xpad"] move to workspace $ws5
+for_window [class="code-oss"] move to workspace $ws2
