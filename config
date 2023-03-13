@@ -191,11 +191,12 @@ bar {
 }
 
 
-# Display Wallpaper
+#######  Display Wallpaper  ######
 exec_always --no-startup-id feh --bg-fill /home/panda/Pictures/Wallpapers/ofas72yn1kt01.jpg
 
 ####### i3 gaps ####
 gaps inner 7
 gaps outer 5
 
-
+###### Keybinding for i3 lock ####
+bindsym $mod+x exec i3lock
