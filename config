@@ -116,12 +116,12 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 #set $ws1 "1"
-set $ws1 "1:  terminal"
-set $ws2 "2:  development"
-set $ws3 "3:   chromium"
+set $ws1 "1: terminal "
+set $ws2 "2: development "
+set $ws3 "3:  chromium "
 set $ws4 "4: "
-set $ws5 "5:  notes"
-set $ws6 "6:  music"
+set $ws5 "5:  notes "
+set $ws6 "6:  music "
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command i3status
+        status_command i3status -c /home/panda/.config/i3status/i3status.conf
 }
 
 
@@ -210,3 +210,7 @@ for_window [class="Spotify"] move to workspace $ws6
  ## not working???
 for_window [class="xpad"] move to workspace $ws5
 for_window [class="code-oss"] move to workspace $ws2
+
+
+# Window Compositor
+exec_always --no-startup-id picom -f
