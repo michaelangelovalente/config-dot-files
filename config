@@ -187,17 +187,18 @@ bindsym $mod+r mode "resize"
 
 #Window colors
 # color themes used http://mcg.mbitson.com/#!?mcgpalette0=%235a1238
-set $bgcolor   #733656 
-set $inactivebgcolor #2E0517 
+set $bgcolor  #2E0517  
+set $inactivebgcolor #2a2728
+set $inactivetextcolor #e5e5e5
 set $textcolor #ffffff
 set $urgentbgcolor #ff0000
 
 # (note: indicator --> line at the screen that shows us where the next window is going to tile
-#				border			background		text		indicator
-client.focused    		$bgcolor		$bgcolor		$textcolor	$bgcolor
-client.unfocused  		$inactivebgcolor	$inactivebgcolor	$textcolor	$inactivebgcolor
-client.focused_inactive  	$inactivebgcolor	$inactivebgcolor	$textcolor	$inactivebgcolor
-client.urgent			$urgentbgcolor		$urgentbgcolor		$textcolor	$urgentbgcolor
+#				border			background		text			indicator
+client.focused    		$bgcolor		$bgcolor		$textcolor		$bgcolor
+client.unfocused  		$inactivebgcolor	$inactivebgcolor	$inactivetextcolor	$inactivebgcolor
+client.focused_inactive  	$inactivebgcolor	$inactivebgcolor	$inactivetextcolor	$inactivebgcolor
+client.urgent			$urgentbgcolor		$urgentbgcolor		$textcolor		$urgentbgcolor
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -205,6 +206,15 @@ client.urgent			$urgentbgcolor		$urgentbgcolor		$textcolor	$urgentbgcolor
 bar {
 	position top
         status_command i3status -c /home/panda/.config/i3status/i3status.conf
+	colors{
+		background $bgcolor
+		separator #282828
+		#	 		border			background		text
+		focused_workspace	$bgcolor		$bgcolor		$textcolor
+		inactive_workspace	$inactivebgcolor	$inactivebgcolor	$inactivetextcolor
+		urgent_workspace	$urgentbgcolor		$urgentbgcolor		$textcolor
+
+	}
 }
 
 
