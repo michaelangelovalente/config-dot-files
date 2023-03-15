@@ -185,6 +185,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#Window colors
+# color themes used http://mcg.mbitson.com/#!?mcgpalette0=%235a1238
+set $bgcolor   #733656 
+set $inactivebgcolor #2E0517 
+set $textcolor #ffffff
+set $urgentbgcolor #ff0000
+
+# (note: indicator --> line at the screen that shows us where the next window is going to tile
+#				border			background		text		indicator
+client.focused    		$bgcolor		$bgcolor		$textcolor	$bgcolor
+client.unfocused  		$inactivebgcolor	$inactivebgcolor	$textcolor	$inactivebgcolor
+client.focused_inactive  	$inactivebgcolor	$inactivebgcolor	$textcolor	$inactivebgcolor
+client.urgent			$urgentbgcolor		$urgentbgcolor		$textcolor	$urgentbgcolor
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
